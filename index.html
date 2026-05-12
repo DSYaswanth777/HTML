@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOme Page</title>
+  </head>
+  <body>
+    <h1>Form tags</h1>
+    <h1>Table Tags</h1>
+    <h1>And some advanced tags</h1>
+
+    <h2>What is a form?</h2>
+    <p>
+      A form is a digital paper form. it will collects information from users
+      and sends data to server
+    </p>
+    <form>
+      <label for="name">Name</label> <br />
+      <input
+        type="text"
+        name="name"
+        id=""
+        placeholder="Enter your Name"
+        required
+      />
+      <br />
+      <label for="password">Password</label> <br />
+      <input type="password" name="password" id="" required /> <br />
+      <label for="age">age</label><br />
+      <input type="number" name="age" min="1" max="100" required /><br />
+      <label for="dob"> DOB</label><br />
+      <input type="date" name="dob" /><br />
+      <label for="gender">Gender</label> <br />
+      <label for="gender">Male</label>
+      <input type="radio" name="gender" value="male" />
+      <label for="gender">Female</label>
+      <input type="radio" name="gender" value="female" />
+      <br />
+      <br />
+      <label for="hobbies">Hobbies</label>
+      <br />
+      <input type="checkbox" name="hobbies" id="" value="reading" />
+      <label for="hobbies">Reading</label> <br />
+
+      <input type="checkbox" name="hobbies" id="" value="gaming" />
+      <label for="hobbies">Gaming</label> <br />
+      <input type="checkbox" name="hobbies" id="" value="riding" />
+      <label for="hobbies">Riding</label> <br />
+      <label for="message">Message:</label> <br />
+      <textarea id="message" name="message" rows="8" cols="90"></textarea>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <p>action where to send the data (like a server URL)</p>
+    <p>method i show to send it (GET or POST)</p>
+
+    <h1>
+        Multimedia Tags
+    </h1>
+    <video width="320" height="240" controls>
+        <source src="movie.mp4" type="video/mp4">
+        Your browser doesn't support video.
+    </video>
+    <audio controls>
+        <source src="song.mp3" type="audio/mpeg">
+        Your browser doesn't support audio.
+    </audio>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+        width="560" 
+        height="315">
+</iframe>
+
+<details>
+    <summary>Click to see more information</summary>
+    <p>This content is hidden until you click!</p>
+    <p>Great for FAQs and expandable sections.</p>
+</details>
+<label>Download Progress:</label>
+<progress value="70" max="100">70%</progress>
+
+<label>Disk Usage:</label>
+<meter value="6" min="0" max="10" low="3" high="8" optimum="5">
+    6 out of 10
+</meter>
+
+<label for="browser">Choose browser:</label>
+<input list="browsers" id="browser" name="browser">
+
+<datalist id="browsers">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Safari">
+    <option value="Edge">
+</datalist>
+
+<figure>
+    <img src="image.jpg" alt="Description">
+    <figcaption>Image caption goes here</figcaption>
+</figure>
+
+<p>This is <mark>highlighted text</mark></p>
+
+<p>The meeting is at <time datetime="2024-05-15T14:00">2:00 PM</time></p>
+
+
+<svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" fill="red" />
+</svg>
+
+
+FORM INPUTS:
+<input type="text">       - Text input
+<input type="email">      - Email input
+<input type="password">   - Password input
+<input type="number">     - Number input
+<input type="date">       - Date picker
+<input type="radio">      - Radio button (single choice)
+<input type="checkbox">   - Checkbox (multiple choice)
+<input type="file">       - File upload
+<select>                  - Dropdown list
+<textarea>                - Multi-line text
+
+TABLE TAGS:
+<table>     - Creates table
+<thead>     - Table header section
+<tbody>     - Table body section
+<tr>        - Table row
+<th>        - Header cell
+<td>        - Data cell
+colspan="2" - Span 2 columns
+rowspan="2" - Span 2 rows
+
+SEMANTIC TAGS:
+<header>   - Top section
+<nav>      - Navigation
+<main>     - Main content
+<section>  - Content section
+<article>  - Self-contained content
+<aside>    - Sidebar
+<footer>   - Bottom section
+
+MULTIMEDIA:
+<video>    - Embed video
+<audio>    - Embed audio
+<iframe>   - Embed webpage
+
+INTERACTIVE:
+<details>  - Collapsible section
+<summary>  - Clickable heading
+<progress> - Progress bar
+<meter>    - Gauge/measurement
+  </body>
+</html>

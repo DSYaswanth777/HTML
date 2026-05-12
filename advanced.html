@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete HTML Guide - Forms, Tables & Advanced Tags</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        color: #667eea;
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        border-bottom: 4px solid #764ba2;
+        padding-bottom: 15px;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #666;
+        font-size: 1.2em;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        color: #764ba2;
+        background: #f0f0f0;
+        padding: 15px;
+        margin: 40px 0 20px 0;
+        border-left: 6px solid #667eea;
+        font-size: 1.8em;
+      }
+
+      h3 {
+        color: #667eea;
+        margin: 25px 0 15px 0;
+        font-size: 1.4em;
+      }
+
+      p {
+        margin: 10px 0;
+        color: #333;
+        font-size: 1.05em;
+      }
+
+      .info-box {
+        background: #e3f2fd;
+        border-left: 4px solid #2196f3;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 5px;
+      }
+
+      .warning-box {
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 5px;
+      }
+
+      .success-box {
+        background: #d4edda;
+        border-left: 4px solid #28a745;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 5px;
+      }
+
+      /* Form Styling */
+      .form-section {
+        background: #f9f9f9;
+        padding: 30px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 2px solid #667eea;
+      }
+
+      form {
+        margin: 20px 0;
+      }
+
+      label {
+        display: block;
+        margin: 15px 0 5px 0;
+        font-weight: bold;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"],
+      input[type="date"],
+      input[type="color"],
+      input[type="file"],
+      input[type="tel"],
+      input[type="url"],
+      input[type="search"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: border 0.3s;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin: 0 8px 0 0;
+        cursor: pointer;
+      }
+
+      .radio-group,
+      .checkbox-group {
+        margin: 10px 0;
+      }
+
+      .radio-group label,
+      .checkbox-group label {
+        display: inline-block;
+        margin-right: 20px;
+        font-weight: normal;
+      }
+
+      button {
+        background: #667eea;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 20px 10px 0 0;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background: #764ba2;
+      }
+
+      button[type="reset"] {
+        background: #6c757d;
+      }
+
+      button[type="reset"]:hover {
+        background: #5a6268;
+      }
+
+      /* Table Styling */
+      .table-section {
+        background: #f9f9f9;
+        padding: 30px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 2px solid #764ba2;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background: #667eea;
+        color: white;
+        padding: 15px;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      td {
+        padding: 12px;
+      }
+
+      tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+
+      tr:hover {
+        background: #e3f2fd;
+      }
+
+      /* Advanced Tags Styling */
+      .advanced-section {
+        background: #f9f9f9;
+        padding: 30px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 2px solid #28a745;
+      }
+
+      details {
+        background: white;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #667eea;
+        padding: 10px;
+      }
+
+      summary:hover {
+        background: #f0f0f0;
+      }
+
+      progress,
+      meter {
+        width: 100%;
+        height: 30px;
+        margin: 10px 0;
+      }
+
+      mark {
+        background: #ffeb3b;
+        padding: 2px 5px;
+      }
+
+      /* Reference Sheet */
+      .reference-sheet {
+        background: #2d2d2d;
+        color: #f8f8f2;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 30px 0;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+      }
+
+      .reference-sheet h3 {
+        color: #ffeb3b;
+        border-bottom: 2px solid #666;
+        padding-bottom: 10px;
+      }
+
+      .reference-sheet p {
+        color: #f8f8f2;
+        margin: 5px 0;
+      }
+
+      code {
+        background: #2d2d2d;
+        color: #4caf50;
+        padding: 3px 8px;
+        border-radius: 3px;
+        font-family: "Courier New", monospace;
+      }
+
+      .tag-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin: 20px 0;
+      }
+
+      .tag-card {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #667eea;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .tag-card h4 {
+        color: #667eea;
+        margin-bottom: 8px;
+      }
+
+      iframe {
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <h1>📚 Complete HTML Guide</h1>
+      <p class="subtitle">
+        Forms, Tables & Advanced HTML Tags - Everything You Need to Know
+      </p>
+
+      <div class="info-box">
+        <strong>📌 What You'll Learn:</strong><br />
+        ✅ All HTML Form Input Types<br />
+        ✅ Table Creation with colspan & rowspan<br />
+        ✅ Advanced HTML5 Semantic Tags<br />
+        ✅ Multimedia Elements (Video, Audio)<br />
+        ✅ Interactive Components<br />
+        ✅ Complete Code Examples
+      </div>
+
+      <!-- ========================================= -->
+      <!-- SECTION 1: FORMS -->
+      <!-- ========================================= -->
+      <h2>📝 SECTION 1: HTML FORMS</h2>
+
+      <h3>What is a Form?</h3>
+      <p>
+        A form is like a digital paper form. It collects information from users
+        and sends data to a server. Think of registration pages, login pages,
+        contact forms - all use HTML forms.
+      </p>
+
+      <div class="info-box">
+        <strong>Basic Form Structure:</strong><br />
+        <code>&lt;form action="/submit" method="POST"&gt;</code><br />
+        <strong>action</strong> = where to send the data (server URL)<br />
+        <strong>method</strong> = how to send it (GET or POST)
+      </div>
+
+      <div class="form-section">
+        <h3>🎯 Complete Form Example with All Input Types</h3>
+
+        <form action="/submit" method="POST">
+          <!-- TEXT INPUT -->
+          <label for="fullname">1. Text Input - Full Name: *</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter your full name"
+            required
+          />
+
+          <!-- EMAIL INPUT -->
+          <label for="email">2. Email Input: *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@email.com"
+            required
+          />
+
+          <!-- PASSWORD INPUT -->
+          <label for="password">3. Password Input: *</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter password"
+            required
+          />
+
+          <!-- NUMBER INPUT -->
+          <label for="age">4. Number Input - Age:</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            min="1"
+            max="100"
+            placeholder="Enter your age"
+          />
+
+          <!-- DATE INPUT -->
+          <label for="dob">5. Date Input - Date of Birth:</label>
+          <input type="date" id="dob" name="dob" />
+
+          <!-- TIME INPUT -->
+          <label for="time">6. Time Input - Appointment Time:</label>
+          <input type="time" id="time" name="time" />
+
+          <!-- DATETIME-LOCAL INPUT -->
+          <label for="datetime">7. DateTime Input - Meeting Schedule:</label>
+          <input type="datetime-local" id="datetime" name="datetime" />
+
+          <!-- COLOR INPUT -->
+          <label for="color">8. Color Picker - Favorite Color:</label>
+          <input type="color" id="color" name="color" value="#667eea" />
+
+          <!-- FILE INPUT -->
+          <label for="file">9. File Upload - Upload Resume:</label>
+          <input type="file" id="file" name="file" />
+
+          <!-- TEL INPUT -->
+          <label for="phone">10. Telephone Input - Phone Number:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+91 1234567890"
+            pattern="[0-9]{10}"
+          />
+
+          <!-- URL INPUT -->
+          <label for="website">11. URL Input - Website:</label>
+          <input
+            type="url"
+            id="website"
+            name="website"
+            placeholder="https://example.com"
+          />
+
+          <!-- SEARCH INPUT -->
+          <label for="search">12. Search Input:</label>
+          <input
+            type="search"
+            id="search"
+            name="search"
+            placeholder="Search here..."
+          />
+
+          <!-- RANGE INPUT -->
+          <label for="range">13. Range Slider - Experience (0-10 years):</label>
+          <input
+            type="range"
+            id="range"
+            name="range"
+            min="0"
+            max="10"
+            value="5"
+          />
+
+          <!-- RADIO BUTTONS -->
+          <label>14. Radio Buttons - Gender: *</label>
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="gender" value="male" required />
+              Male</label
+            >
+            <label
+              ><input type="radio" name="gender" value="female" /> Female</label
+            >
+            <label
+              ><input type="radio" name="gender" value="other" /> Other</label
+            >
+          </div>
+
+          <!-- CHECKBOXES -->
+          <label
+            >15. Checkboxes - Programming Languages (select multiple):</label
+          >
+          <div class="checkbox-group">
+            <label
+              ><input type="checkbox" name="languages" value="html" />
+              HTML</label
+            >
+            <label
+              ><input type="checkbox" name="languages" value="css" /> CSS</label
+            >
+            <label
+              ><input type="checkbox" name="languages" value="javascript" />
+              JavaScript</label
+            >
+            <label
+              ><input type="checkbox" name="languages" value="python" />
+              Python</label
+            >
+            <label
+              ><input type="checkbox" name="languages" value="java" />
+              Java</label
+            >
+          </div>
+
+          <!-- SELECT DROPDOWN -->
+          <label for="course">16. Dropdown (Select) - Select Course: *</label>
+          <select id="course" name="course" required>
+            <option value="">--Choose a Course--</option>
+            <option value="web">Web Development</option>
+            <option value="python">Python Programming</option>
+            <option value="data">Data Science</option>
+            <option value="ai">Artificial Intelligence</option>
+            <option value="cyber">Cyber Security</option>
+          </select>
+
+          <!-- SELECT MULTIPLE -->
+          <label for="skills"
+            >17. Multiple Select - Skills (Hold Ctrl to select multiple):</label
+          >
+          <select id="skills" name="skills" multiple size="4">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js">JavaScript</option>
+            <option value="react">React</option>
+            <option value="node">Node.js</option>
+          </select>
+
+          <!-- TEXTAREA -->
+          <label for="message">18. Textarea - Tell us about yourself:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Write your message here..."
+          ></textarea>
+
+          <!-- DATALIST (INPUT WITH SUGGESTIONS) -->
+          <label for="city">19. Input with Datalist - City:</label>
+          <input
+            list="cities"
+            id="city"
+            name="city"
+            placeholder="Start typing city name..."
+          />
+          <datalist id="cities">
+            <option value="Mumbai"></option>
+            <option value="Delhi"></option>
+            <option value="Bangalore"></option>
+            <option value="Hyderabad"></option>
+            <option value="Chennai"></option>
+            <option value="Kolkata"></option>
+            <option value="Pune"></option>
+          </datalist>
+
+          <!-- BUTTONS -->
+          <div>
+            <button type="submit">✅ Submit Form</button>
+            <button type="reset">🔄 Reset Form</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="warning-box">
+        <strong>⚠️ Important Notes:</strong><br />
+        • Always use <code>&lt;label&gt;</code> with <code>for</code> attribute
+        matching input's <code>id</code><br />
+        • Use <code>required</code> attribute for mandatory fields<br />
+        • <code>placeholder</code> shows hint text inside input<br />
+        • Radio buttons with same <code>name</code> = only one can be
+        selected<br />
+        • Checkboxes can have multiple selections
+      </div>
+
+      <!-- ========================================= -->
+      <!-- SECTION 2: TABLES -->
+      <!-- ========================================= -->
+      <h2>📊 SECTION 2: HTML TABLES</h2>
+
+      <h3>What is a Table?</h3>
+      <p>
+        Tables display data in rows and columns, like a spreadsheet. Used for
+        structured data like student marks, product lists, schedules, etc.
+      </p>
+
+      <div class="info-box">
+        <strong>Table Structure:</strong><br />
+        <code>&lt;table&gt;</code> - Creates the table<br />
+        <code>&lt;thead&gt;</code> - Header section<br />
+        <code>&lt;tbody&gt;</code> - Body section<br />
+        <code>&lt;tfoot&gt;</code> - Footer section<br />
+        <code>&lt;tr&gt;</code> - Table row<br />
+        <code>&lt;th&gt;</code> - Header cell (bold, centered)<br />
+        <code>&lt;td&gt;</code> - Data cell (normal text)
+      </div>
+
+      <div class="table-section">
+        <h3>📋 Example 1: Student Marks Sheet</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Roll No</th>
+              <th>Student Name</th>
+              <th>Mathematics</th>
+              <th>Science</th>
+              <th>English</th>
+              <th>Total</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>101</td>
+              <td>Rahul Sharma</td>
+              <td>85</td>
+              <td>90</td>
+              <td>88</td>
+              <td>263</td>
+              <td>A+</td>
+            </tr>
+            <tr>
+              <td>102</td>
+              <td>Priya Patel</td>
+              <td>92</td>
+              <td>88</td>
+              <td>90</td>
+              <td>270</td>
+              <td>A+</td>
+            </tr>
+            <tr>
+              <td>103</td>
+              <td>Amit Kumar</td>
+              <td>78</td>
+              <td>82</td>
+              <td>85</td>
+              <td>245</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>104</td>
+              <td>Sneha Reddy</td>
+              <td>88</td>
+              <td>91</td>
+              <td>87</td>
+              <td>266</td>
+              <td>A+</td>
+            </tr>
+            <tr>
+              <td>105</td>
+              <td>Vikram Singh</td>
+              <td>70</td>
+              <td>75</td>
+              <td>72</td>
+              <td>217</td>
+              <td>B+</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="2">Total Students: 5</th>
+              <th>413</th>
+              <th>426</th>
+              <th>422</th>
+              <th>1261</th>
+              <th>-</th>
+            </tr>
+          </tfoot>
+        </table>
+
+        <h3>📋 Example 2: Colspan & Rowspan Table</h3>
+        <p>
+          <strong>Colspan</strong> = spans across columns (horizontal)<br />
+          <strong>Rowspan</strong> = spans across rows (vertical)
+        </p>
+
+        <table>
+          <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="2">Marks</th>
+            <th rowspan="2">Total</th>
+            <th rowspan="2">Grade</th>
+          </tr>
+          <tr>
+            <th>Theory</th>
+            <th>Practical</th>
+          </tr>
+          <tr>
+            <td>John Doe</td>
+            <td>85</td>
+            <td>90</td>
+            <td>175</td>
+            <td>A+</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>78</td>
+            <td>82</td>
+            <td>160</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>Mike Johnson</td>
+            <td>92</td>
+            <td>88</td>
+            <td>180</td>
+            <td>A+</td>
+          </tr>
+          <tr>
+            <th colspan="3">Average</th>
+            <th>171.67</th>
+            <th>A</th>
+          </tr>
+        </table>
+
+        <h3>📋 Example 3: Class Schedule Table</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>9:00 - 10:00</td>
+              <td>Mathematics</td>
+              <td>English</td>
+              <td>Science</td>
+              <td>History</td>
+              <td>Geography</td>
+            </tr>
+            <tr>
+              <td>10:00 - 11:00</td>
+              <td>Physics</td>
+              <td>Chemistry</td>
+              <td>Biology</td>
+              <td>Mathematics</td>
+              <td>English</td>
+            </tr>
+            <tr>
+              <td>11:00 - 11:30</td>
+              <td colspan="5" style="text-align: center; background: #ffeb3b">
+                ☕ BREAK
+              </td>
+            </tr>
+            <tr>
+              <td>11:30 - 12:30</td>
+              <td>Computer</td>
+              <td>Sports</td>
+              <td>Art</td>
+              <td>Music</td>
+              <td>Computer</td>
+            </tr>
+            <tr>
+              <td>12:30 - 1:30</td>
+              <td>Lab</td>
+              <td>Lab</td>
+              <td>Library</td>
+              <td>Project</td>
+              <td>Activity</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ========================================= -->
+      <!-- SECTION 3: ADVANCED HTML TAGS -->
+      <!-- ========================================= -->
+      <h2>🚀 SECTION 3: ADVANCED HTML TAGS</h2>
+
+      <div class="advanced-section">
+        <h3>🏗️ Semantic HTML5 Tags (Page Structure)</h3>
+        <p>
+          Semantic tags describe their meaning clearly. Better for SEO and
+          accessibility.
+        </p>
+
+        <div class="tag-grid">
+          <div class="tag-card">
+            <h4>&lt;header&gt;</h4>
+            <p>Top section of page containing logo, navigation, site title</p>
+          </div>
+          <div class="tag-card">
+            <h4>&lt;nav&gt;</h4>
+            <p>Navigation menu with links</p>
+          </div>
+          <div class="tag-card">
+            <h4>&lt;main&gt;</h4>
+            <p>Main content area of page (unique per page)</p>
+          </div>
+          <div class="tag-card">
+            <h4>&lt;section&gt;</h4>
+            <p>Thematic grouping of content</p>
+          </div>
+          <div class="tag-card">
+            <h4>&lt;article&gt;</h4>
+            <p>Self-contained content (blog post, news article)</p>
+          </div>
+          <div class="tag-card">
+            <h4>&lt;aside&gt;</h4>
+            <p>Sidebar content, related info</p>
+          </div>
+          <div class="tag-card">
+            <h4>&lt;footer&gt;</h4>
+            <p>Bottom section with copyright, contact info</p>
+          </div>
+          <div class="tag-card">
+            <h4>&lt;figure&gt;</h4>
+            <p>Image with caption</p>
+          </div>
+        </div>
+
+        <h3>🎬 Multimedia Tags</h3>
+
+        <h4>1. Video Tag</h4>
+        <div class="info-box">
+          <code
+            >&lt;video width="320" height="240" controls autoplay muted
+            loop&gt;<br />
+            &nbsp;&nbsp;&lt;source src="movie.mp4" type="video/mp4"&gt;<br />
+            &nbsp;&nbsp;Your browser doesn't support video.<br />
+            &lt;/video&gt;</code
+          ><br /><br />
+          <strong>Attributes:</strong><br />
+          • <code>controls</code> - Shows play/pause buttons<br />
+          • <code>autoplay</code> - Starts automatically<br />
+          • <code>muted</code> - No sound<br />
+          • <code>loop</code> - Repeats video<br />
+          • <code>poster</code> - Thumbnail image before playing
+        </div>
+
+        <video width="400" height="240" controls>
+          <source src="https://lorem.video/720p" type="video/mp4" />
+          Your browser doesn't support the video tag.
+        </video>
+
+        <h4>2. Audio Tag</h4>
+        <div class="info-box">
+          <code
+            >&lt;audio controls autoplay loop&gt;<br />
+            &nbsp;&nbsp;&lt;source src="song.mp3" type="audio/mpeg"&gt;<br />
+            &nbsp;&nbsp;Your browser doesn't support audio.<br />
+            &lt;/audio&gt;</code
+          >
+        </div>
+        <!-- Free Audio Sample 1 -->
+        <audio controls>
+          <source
+            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+            type="audio/mpeg"
+          />
+          Your browser doesn't support audio.
+        </audio>
+
+        <!-- Free Audio Sample 2 -->
+        <audio controls>
+          <source
+            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+            type="audio/mpeg"
+          />
+          Your browser doesn't support audio.
+        </audio>
+
+        <!-- Free Audio Sample 3 -->
+        <audio controls>
+          <source
+            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+            type="audio/mpeg"
+          />
+          Your browser doesn't support audio.
+        </audio>
+
+        <h4>3. Iframe Tag (Embed Websites/YouTube)</h4>
+        <div class="info-box">
+          <code
+            >&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" width="560"
+            height="315"&gt;&lt;/iframe&gt;</code
+          >
+        </div>
+
+        <!-- Wikipedia Embed -->
+        <iframe
+          src="https://en.wikipedia.org/wiki/HTML"
+          width="100%"
+          height="400"
+          title="Wikipedia HTML"
+        ></iframe>
+
+        <!-- YouTube Video Embed (HTML Tutorial) -->
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/qz0aGYrrlhU"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <!-- YouTube Video Embed 2 (Web Development) -->
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/pQN-pnXPaVg"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <!-- Google Maps Embed (Example Location) -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0977252683936!2d-122.41941548468208!3d37.774929679759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sTwitter%20HQ!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+
+        <!-- OpenStreetMap Embed -->
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0"
+          scrolling="no"
+          marginheight="0"
+          marginwidth="0"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
+        ></iframe>
+
+        <!-- CodePen Embed Example -->
+        <iframe
+          height="300"
+          style="width: 100%"
+          scrolling="no"
+          title="Simple HTML Form"
+          src="https://codepen.io/team/codepen/embed/preview/PNaGbb?height=300&theme-id=dark&default-tab=html,result"
+          frameborder="no"
+          loading="lazy"
+          allowtransparency="true"
+          allowfullscreen="true"
+        ></iframe>
+        <h3>🎨 Interactive Elements</h3>
+
+        <h4>1. Details & Summary (Accordion/Collapsible)</h4>
+        <details>
+          <summary>📖 Click to see HTML Form Rules</summary>
+          <p><strong>Form Best Practices:</strong></p>
+          <ul>
+            <li>Always use labels for accessibility</li>
+            <li>Mark required fields with asterisk (*)</li>
+            <li>Provide clear placeholder text</li>
+            <li>Use appropriate input types for validation</li>
+            <li>Group related fields together</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>📖 Click to see Table Tips</summary>
+          <p><strong>Table Best Practices:</strong></p>
+          <ul>
+            <li>Always use &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</li>
+            <li>Use &lt;th&gt; for headers, &lt;td&gt; for data</li>
+            <li>Add borders and styling for readability</li>
+            <li>Use colspan/rowspan for merged cells</li>
+            <li>Make tables responsive for mobile</li>
+          </ul>
+        </details>
+
+        <h4>2. Progress Bar</h4>
+        <label>Project Completion:</label>
+        <progress value="70" max="100">70%</progress>
+        <p>70% Complete</p>
+
+        <label>Download Progress:</label>
+        <progress value="45" max="100">45%</progress>
+        <p>45% Complete</p>
+
+        <h4>3. Meter Tag (Gauge)</h4>
+        <label>Disk Usage (6GB out of 10GB):</label>
+        <meter value="6" min="0" max="10" low="3" high="8" optimum="5">
+          6 out of 10
+        </meter>
+
+        <label>Battery Level:</label>
+        <meter value="0.8" min="0" max="1">80%</meter>
+
+        <h4>4. Datalist (Input with Suggestions)</h4>
+        <label for="browser">Choose your browser:</label>
+        <input
+          list="browsers"
+          id="browser"
+          name="browser"
+          placeholder="Start typing..."
+        />
+        <datalist id="browsers">
+          <option value="Google Chrome"></option>
+          <option value="Mozilla Firefox"></option>
+          <option value="Safari"></option>
+          <option value="Microsoft Edge"></option>
+          <option value="Opera"></option>
+          <option value="Brave"></option>
+        </datalist>
+
+        <h3>📝 Text Formatting Tags</h3>
+
+        <p>
+          <strong>&lt;mark&gt;</strong> - This is <mark>highlighted text</mark>
+        </p>
+        <p>
+          <strong>&lt;strong&gt;</strong> - This is
+          <strong>important text</strong>
+        </p>
+        <p><strong>&lt;em&gt;</strong> - This is <em>emphasized text</em></p>
+        <p>
+          <strong>&lt;small&gt;</strong> - This is <small>smaller text</small>
+        </p>
+        <p><strong>&lt;del&gt;</strong> - This is <del>deleted text</del></p>
+        <p><strong>&lt;ins&gt;</strong> - This is <ins>inserted text</ins></p>
+        <p><strong>&lt;sub&gt;</strong> - H<sub>2</sub>O (subscript)</p>
+        <p><strong>&lt;sup&gt;</strong> - X<sup>2</sup> (superscript)</p>
+        <p>
+          <strong>&lt;abbr&gt;</strong> -
+          <abbr title="HyperText Markup Language">HTML</abbr> (hover to see full
+          form)
+        </p>
+        <p>
+          <strong>&lt;code&gt;</strong> - Code:
+          <code>console.log("Hello");</code>
+        </p>
+        <p>
+          <strong>&lt;kbd&gt;</strong> - Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to
+          copy
+        </p>
+        <p>
+          <strong>&lt;time&gt;</strong> - Meeting at
+          <time datetime="2024-05-15T14:00">2:00 PM, May 15, 2024</time>
+        </p>
+
+        <h3>🖼️ Figure & Figcaption</h3>
+        <figure
+          style="
+            text-align: center;
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+          "
+        >
+          <svg width="150" height="150">
+            <circle cx="75" cy="75" r="60" fill="#667eea" />
+            <text
+              x="75"
+              y="85"
+              text-anchor="middle"
+              fill="white"
+              font-size="24"
+              font-weight="bold"
+            >
+              SVG
+            </text>
+          </svg>
+          <figcaption>
+            <strong>Figure 1:</strong> Example SVG Circle with Text
+          </figcaption>
+        </figure>
+
+        <h3>🎨 SVG (Scalable Vector Graphics)</h3>
+        <p>
+          SVG is used for creating vector graphics that scale perfectly at any
+          size.
+        </p>
+
+        <svg
+          width="300"
+          height="150"
+          style="
+            background: #f9f9f9;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+          "
+        >
+          <circle cx="50" cy="75" r="40" fill="red" />
+          <rect x="110" y="35" width="80" height="80" fill="blue" />
+          <polygon points="250,35 280,95 220,95" fill="green" />
+        </svg>
+
+        <h3>🖌️ Canvas (For JavaScript Drawing)</h3>
+        <div class="info-box">
+          <code
+            >&lt;canvas id="myCanvas" width="200"
+            height="100"&gt;&lt;/canvas&gt;</code
+          ><br />
+          Canvas requires JavaScript to draw. Used for games, animations,
+          charts.
+        </div>
+        <canvas
+          id="myCanvas"
+          width="300"
+          height="150"
+          style="border: 2px solid #ddd; border-radius: 5px"
+        ></canvas>
+
+        <script>
+          const canvas = document.getElementById("myCanvas");
+          const ctx = canvas.getContext("2d");
+
+          // Draw gradient background
+          const gradient = ctx.createLinearGradient(0, 0, 300, 0);
+          gradient.addColorStop(0, "#667eea");
+          gradient.addColorStop(1, "#764ba2");
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, 300, 150);
+
+          // Draw text
+          ctx.fillStyle = "white";
+          ctx.font = "bold 24px Arial";
+          ctx.fillText("Canvas Drawing", 50, 80);
+        </script>
+      </div>
+
+      <!-- ========================================= -->
+      <!-- QUICK REFERENCE SHEET -->
+      <!-- ========================================= -->
+      <h2>📋 QUICK REFERENCE SHEET</h2>
+
+      <div class="reference-sheet">
+        <h3>🔹 FORM INPUT TYPES</h3>
+        <p>&lt;input type="text"&gt; - Text input</p>
+        <p>&lt;input type="email"&gt; - Email input (validates email)</p>
+        <p>&lt;input type="password"&gt; - Password input (hides text)</p>
+        <p>&lt;input type="number"&gt; - Number input</p>
+        <p>&lt;input type="date"&gt; - Date picker</p>
+        <p>&lt;input type="time"&gt; - Time picker</p>
+        <p>&lt;input type="datetime-local"&gt; - Date & time picker</p>
+        <p>&lt;input type="color"&gt; - Color picker</p>
+        <p>&lt;input type="file"&gt; - File upload</p>
+        <p>&lt;input type="tel"&gt; - Telephone number</p>
+        <p>&lt;input type="url"&gt; - URL/website</p>
+        <p>&lt;input type="search"&gt; - Search input</p>
+        <p>&lt;input type="range"&gt; - Slider</p>
+        <p>&lt;input type="radio"&gt; - Radio button (single choice)</p>
+        <p>&lt;input type="checkbox"&gt; - Checkbox (multiple choice)</p>
+        <p>&lt;select&gt; - Dropdown list</p>
+        <p>&lt;textarea&gt; - Multi-line text</p>
+        <p>&lt;button&gt; - Button</p>
+
+        <h3>🔹 TABLE TAGS</h3>
+        <p>&lt;table&gt; - Creates table</p>
+        <p>&lt;thead&gt; - Table header section</p>
+        <p>&lt;tbody&gt; - Table body section</p>
+        <p>&lt;tfoot&gt; - Table footer section</p>
+        <p>&lt;tr&gt; - Table row</p>
+        <p>&lt;th&gt; - Header cell (bold)</p>
+        <p>&lt;td&gt; - Data cell</p>
+        <p>colspan="2" - Span 2 columns</p>
+        <p>rowspan="2" - Span 2 rows</p>
+
+        <h3>🔹 SEMANTIC TAGS</h3>
+        <p>&lt;header&gt; - Page/section header</p>
+        <p>&lt;nav&gt; - Navigation menu</p>
+        <p>&lt;main&gt; - Main content</p>
+        <p>&lt;section&gt; - Content section</p>
+        <p>&lt;article&gt; - Self-contained content</p>
+        <p>&lt;aside&gt; - Sidebar</p>
+        <p>&lt;footer&gt; - Page/section footer</p>
+        <p>&lt;figure&gt; - Image with caption</p>
+        <p>&lt;figcaption&gt; - Caption for figure</p>
+
+        <h3>🔹 MULTIMEDIA TAGS</h3>
+        <p>&lt;video&gt; - Embed video</p>
+        <p>&lt;audio&gt; - Embed audio</p>
+        <p>&lt;iframe&gt; - Embed webpage</p>
+        <p>&lt;canvas&gt; - Drawing area (needs JS)</p>
+        <p>&lt;svg&gt; - Vector graphics</p>
+
+        <h3>🔹 INTERACTIVE TAGS</h3>
+        <p>&lt;details&gt; - Collapsible section</p>
+        <p>&lt;summary&gt; - Clickable heading for details</p>
+        <p>&lt;progress&gt; - Progress bar</p>
+        <p>&lt;meter&gt; - Gauge/measurement</p>
+        <p>&lt;datalist&gt; - Input suggestions</p>
+
+        <h3>🔹 TEXT FORMATTING</h3>
+        <p>&lt;mark&gt; - Highlighted text</p>
+        <p>&lt;strong&gt; - Important text</p>
+        <p>&lt;em&gt; - Emphasized text</p>
+        <p>&lt;small&gt; - Smaller text</p>
+        <p>&lt;del&gt; - Deleted text</p>
+        <p>&lt;ins&gt; - Inserted text</p>
+        <p>&lt;sub&gt; - Subscript</p>
+        <p>&lt;sup&gt; - Superscript</p>
+        <p>&lt;code&gt; - Code snippet</p>
+        <p>&lt;kbd&gt; - Keyboard input</p>
+        <p>&lt;abbr&gt; - Abbreviation</p>
+        <p>&lt;time&gt; - Date/time</p>
+      </div>
+
+      <!-- FOOTER -->
+    </div>
+  </body>
+</html>
