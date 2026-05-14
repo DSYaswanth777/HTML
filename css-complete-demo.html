@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete CSS Guide: Flexbox, Grid, Position, Z-index, Media Queries</title>
+    <style>
+        /* ==================== RESET & BASE STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        /* ==================== SECTION 1: FLEXBOX DEMONSTRATIONS ==================== */
+        
+        /* Flex Container - Basic Setup */
+        .flex-section {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .demo-title {
+            font-size: 16px;
+            margin: 15px 0 10px;
+            color: #34495e;
+            font-weight: 600;
+        }
+
+        /* FLEX DEMO 1: flex-direction */
+        .flex-container-row {
+            display: flex;
+            flex-direction: row;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #3498db;
+        }
+
+        .flex-container-row-reverse {
+            display: flex;
+            flex-direction: row-reverse;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #e74c3c;
+        }
+
+        .flex-container-column {
+            display: flex;
+            flex-direction: column;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #2ecc71;
+            height: 200px;
+        }
+
+        .flex-container-column-reverse {
+            display: flex;
+            flex-direction: column-reverse;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #f39c12;
+            height: 200px;
+        }
+
+        /* FLEX DEMO 2: flex-wrap */
+        .flex-nowrap {
+            display: flex;
+            flex-wrap: nowrap;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #9b59b6;
+        }
+
+        .flex-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #1abc9c;
+        }
+
+        .flex-wrap-reverse {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #e67e22;
+        }
+
+        /* FLEX DEMO 3: justify-content */
+        .flex-justify-start {
+            display: flex;
+            justify-content: flex-start;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #3498db;
+        }
+
+        .flex-justify-end {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #e74c3c;
+        }
+
+        .flex-justify-center {
+            display: flex;
+            justify-content: center;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #2ecc71;
+        }
+
+        .flex-justify-between {
+            display: flex;
+            justify-content: space-between;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #f39c12;
+        }
+
+        .flex-justify-around {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #9b59b6;
+        }
+
+        .flex-justify-evenly {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #1abc9c;
+        }
+
+        /* FLEX DEMO 4: align-items */
+        .flex-align-start {
+            display: flex;
+            align-items: flex-start;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 120px;
+            border: 2px solid #3498db;
+        }
+
+        .flex-align-end {
+            display: flex;
+            align-items: flex-end;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 120px;
+            border: 2px solid #e74c3c;
+        }
+
+        .flex-align-center {
+            display: flex;
+            align-items: center;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 120px;
+            border: 2px solid #2ecc71;
+        }
+
+        .flex-align-stretch {
+            display: flex;
+            align-items: stretch;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 120px;
+            border: 2px solid #f39c12;
+        }
+
+        .flex-align-baseline {
+            display: flex;
+            align-items: baseline;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 120px;
+            border: 2px solid #9b59b6;
+        }
+
+        /* FLEX DEMO 5: align-content */
+        .flex-content-start {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 200px;
+            border: 2px solid #3498db;
+        }
+
+        .flex-content-center {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 200px;
+            border: 2px solid #2ecc71;
+        }
+
+        .flex-content-between {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 200px;
+            border: 2px solid #f39c12;
+        }
+
+        /* FLEX DEMO 6: gap */
+        .flex-gap {
+            display: flex;
+            gap: 20px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #1abc9c;
+        }
+
+        .flex-row-column-gap {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 15px;
+            column-gap: 30px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #e67e22;
+        }
+
+        /* FLEX DEMO 7: Flex Items Properties */
+        .flex-items-demo {
+            display: flex;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #34495e;
+        }
+
+        .flex-item-order-1 {
+            order: 1;
+        }
+
+        .flex-item-order-2 {
+            order: 2;
+        }
+
+        .flex-item-order-3 {
+            order: 3;
+        }
+
+        .flex-item-grow {
+            flex-grow: 1;
+        }
+
+        .flex-item-grow-2 {
+            flex-grow: 2;
+        }
+
+        .flex-item-shrink-0 {
+            flex-shrink: 0;
+            min-width: 150px;
+        }
+
+        .flex-item-basis {
+            flex-basis: 200px;
+        }
+
+        .flex-item-shorthand {
+            flex: 1; /* flex-grow: 1, flex-shrink: 1, flex-basis: 0% */
+        }
+
+        .flex-item-align-self {
+            align-self: flex-end;
+        }
+
+        /* Generic flex item styling */
+        .flex-item {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 5px;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .flex-item-small {
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        .flex-item-varied:nth-child(1) {
+            font-size: 20px;
+            padding: 20px 15px;
+        }
+
+        .flex-item-varied:nth-child(2) {
+            font-size: 14px;
+            padding: 15px;
+        }
+
+        .flex-item-varied:nth-child(3) {
+            font-size: 18px;
+            padding: 18px 15px;
+        }
+
+        /* ==================== SECTION 2: GRID DEMONSTRATIONS ==================== */
+
+        /* GRID DEMO 1: Basic Grid Setup */
+        .grid-basic {
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: 100px 100px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #3498db;
+        }
+
+        .grid-fr {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 100px auto 100px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #2ecc71;
+        }
+
+        .grid-repeat {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 100px);
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #f39c12;
+        }
+
+        .grid-minmax {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(100px, 1fr));
+            grid-template-rows: minmax(80px, auto);
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #9b59b6;
+        }
+
+        .grid-auto-fit {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #1abc9c;
+        }
+
+        .grid-auto-fill {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #e67e22;
+        }
+
+        /* GRID DEMO 2: Grid Template Areas */
+        .grid-areas {
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
+            grid-template-rows: 80px 1fr 60px;
+            grid-template-areas:
+                "header header header"
+                "sidebar main aside"
+                "footer footer footer";
+            min-height: 400px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            gap: 10px;
+            border: 2px solid #34495e;
+        }
+
+        .grid-header {
+            grid-area: header;
+            background-color: #3498db;
+        }
+
+        .grid-sidebar {
+            grid-area: sidebar;
+            background-color: #2ecc71;
+        }
+
+        .grid-main {
+            grid-area: main;
+            background-color: #f39c12;
+        }
+
+        .grid-aside {
+            grid-area: aside;
+            background-color: #9b59b6;
+        }
+
+        .grid-footer {
+            grid-area: footer;
+            background-color: #e74c3c;
+        }
+
+        /* GRID DEMO 3: Gap */
+        .grid-gap {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #1abc9c;
+        }
+
+        .grid-row-column-gap {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 10px;
+            column-gap: 30px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #e67e22;
+        }
+
+        /* GRID DEMO 4: Justify and Align Items */
+        .grid-justify-items-start {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: start;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #3498db;
+        }
+
+        .grid-justify-items-center {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #2ecc71;
+        }
+
+        .grid-align-items-start {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 100px);
+            align-items: start;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #f39c12;
+        }
+
+        .grid-align-items-center {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 100px);
+            align-items: center;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #9b59b6;
+        }
+
+        .grid-place-items-center {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 100px);
+            place-items: center;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #1abc9c;
+        }
+
+        /* GRID DEMO 5: Justify and Align Content */
+        .grid-justify-content {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(2, 80px);
+            justify-content: space-between;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 300px;
+            border: 2px solid #e74c3c;
+        }
+
+        .grid-align-content {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(2, 80px);
+            align-content: center;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 300px;
+            border: 2px solid #3498db;
+        }
+
+        .grid-place-content {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(2, 80px);
+            place-content: center;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            height: 300px;
+            border: 2px solid #2ecc71;
+        }
+
+        /* GRID DEMO 6: Grid Item Placement */
+        .grid-placement {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #34495e;
+        }
+
+        .grid-span-column {
+            grid-column: 1 / 3; /* span 2 columns */
+            background-color: #e74c3c;
+        }
+
+        .grid-span-row {
+            grid-row: 1 / 3; /* span 2 rows */
+            background-color: #3498db;
+        }
+
+        .grid-span-both {
+            grid-column: 2 / 4;
+            grid-row: 2 / 4;
+            background-color: #2ecc71;
+        }
+
+        .grid-line-placement {
+            grid-column: 1 / -1; /* from first to last line */
+            background-color: #f39c12;
+        }
+
+        .grid-span-keyword {
+            grid-column: span 2;
+            grid-row: span 1;
+            background-color: #9b59b6;
+        }
+
+        /* GRID DEMO 7: Auto Flow */
+        .grid-auto-flow-row {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-auto-flow: row;
+            grid-auto-rows: 80px;
+            gap: 10px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #1abc9c;
+        }
+
+        .grid-auto-flow-column {
+            display: grid;
+            grid-template-rows: repeat(3, 80px);
+            grid-auto-flow: column;
+            grid-auto-columns: 100px;
+            gap: 10px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #e67e22;
+        }
+
+        .grid-auto-flow-dense {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-flow: dense;
+            gap: 10px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #c0392b;
+        }
+
+        /* Generic grid item styling */
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-item-small {
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        /* ==================== SECTION 3: POSITION DEMONSTRATIONS ==================== */
+
+        .position-container {
+            position: relative;
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 10px 0;
+            min-height: 300px;
+            border: 2px dashed #95a5a6;
+        }
+
+        /* POSITION DEMO 1: Static (default) */
+        .position-static {
+            position: static;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            /* top, right, bottom, left have no effect */
+        }
+
+        /* POSITION DEMO 2: Relative */
+        .position-relative {
+            position: relative;
+            top: 20px;
+            left: 30px;
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .position-relative-no-offset {
+            position: relative;
+            background-color: #f39c12;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        /* POSITION DEMO 3: Absolute */
+        .position-absolute-top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .position-absolute-bottom-left {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: #9b59b6;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .position-absolute-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #1abc9c;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        /* POSITION DEMO 4: Fixed */
+        .position-fixed-bottom-right {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .position-fixed-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #34495e;
+            color: white;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+
+        /* POSITION DEMO 5: Sticky */
+        .position-sticky {
+            position: sticky;
+            top: 0;
+            background-color: #f39c12;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .sticky-container {
+            background-color: #ecf0f1;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #95a5a6;
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+
+        .sticky-content {
+            height: 800px;
+            background: linear-gradient(to bottom, #ffffff 0%, #ecf0f1 100%);
+            padding: 20px;
+        }
+
+        /* ==================== SECTION 4: Z-INDEX DEMONSTRATIONS ==================== */
+
+        .zindex-container {
+            position: relative;
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 10px 0;
+            min-height: 300px;
+            border: 2px solid #95a5a6;
+        }
+
+        /* Z-INDEX DEMO 1: Basic Stacking */
+        .zindex-box-1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px;
+            height: 150px;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            z-index: 1;
+        }
+
+        .zindex-box-2 {
+            position: absolute;
+            top: 60px;
+            left: 60px;
+            width: 150px;
+            height: 150px;
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px;
+            z-index: 2;
+        }
+
+        .zindex-box-3 {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 150px;
+            height: 150px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px;
+            z-index: 3;
+        }
+
+        /* Z-INDEX DEMO 2: Negative z-index */
+        .zindex-background {
+            position: relative;
+            background-color: #ecf0f1;
+            padding: 30px;
+            margin: 10px 0;
+            border: 2px solid #95a5a6;
+        }
+
+        .zindex-negative {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 200px;
+            height: 100px;
+            background-color: #f39c12;
+            color: white;
+            padding: 15px;
+            z-index: -1;
+        }
+
+        .zindex-content {
+            position: relative;
+            background-color: white;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        /* Z-INDEX DEMO 3: Stacking Context */
+        .stacking-context-parent {
+            position: relative;
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px solid #95a5a6;
+            min-height: 300px;
+        }
+
+        .stacking-context-1 {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(52, 152, 219, 0.7);
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .stacking-context-1-child {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            z-index: 999; /* Can't escape parent context */
+        }
+
+        .stacking-context-2 {
+            position: relative;
+            z-index: 2;
+            background-color: rgba(46, 204, 113, 0.7);
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .stacking-context-2-child {
+            position: absolute;
+            top: 20px;
+            left: 100px;
+            background-color: #9b59b6;
+            color: white;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        /* Z-INDEX DEMO 4: Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            z-index: 1001;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        /* ==================== SECTION 5: MEDIA QUERIES DEMONSTRATIONS ==================== */
+
+        /* Container for responsive demos */
+        .responsive-demo {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px solid #95a5a6;
+            text-align: center;
+        }
+
+        /* MEDIA QUERY DEMO 1: Width-based (Mobile First) */
+        .responsive-box {
+            background-color: #e74c3c;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .responsive-box::before {
+            content: "📱 Mobile (< 576px)";
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {
+            .responsive-box {
+                background-color: #f39c12;
+            }
+            .responsive-box::before {
+                content: "📱 Small (≥ 576px)";
+            }
+        }
+
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) {
+            .responsive-box {
+                background-color: #2ecc71;
+            }
+            .responsive-box::before {
+                content: "📱 Tablet (≥ 768px)";
+            }
+        }
+
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+            .responsive-box {
+                background-color: #3498db;
+            }
+            .responsive-box::before {
+                content: "💻 Desktop (≥ 992px)";
+            }
+        }
+
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) {
+            .responsive-box {
+                background-color: #9b59b6;
+            }
+            .responsive-box::before {
+                content: "🖥️ Large Desktop (≥ 1200px)";
+            }
+        }
+
+        /* MEDIA QUERY DEMO 2: Orientation */
+        .orientation-demo {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .orientation-demo::before {
+            content: "Orientation: Portrait";
+        }
+
+        @media (orientation: landscape) {
+            .orientation-demo {
+                background-color: #2ecc71;
+            }
+            .orientation-demo::before {
+                content: "Orientation: Landscape";
+            }
+        }
+
+        /* MEDIA QUERY DEMO 3: Responsive Grid */
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Mobile: 1 column */
+            gap: 15px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        @media (min-width: 576px) {
+            .responsive-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            }
+        }
+
+        @media (min-width: 992px) {
+            .responsive-grid {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .responsive-grid {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            }
+        }
+
+        /* MEDIA QUERY DEMO 4: Responsive Flexbox Navigation */
+        .responsive-nav {
+            display: flex;
+            flex-direction: column;
+            background-color: #34495e;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .responsive-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-bottom: 1px solid #4a5f7f;
+        }
+
+        @media (min-width: 768px) {
+            .responsive-nav {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .responsive-nav a {
+                border-bottom: none;
+                border-right: 1px solid #4a5f7f;
+            }
+            .responsive-nav a:last-child {
+                border-right: none;
+            }
+        }
+
+        /* MEDIA QUERY DEMO 5: Hide/Show Elements */
+        .mobile-only {
+            display: block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .desktop-only {
+            display: none;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-only {
+                display: none;
+            }
+            .desktop-only {
+                display: block;
+            }
+        }
+
+        /* MEDIA QUERY DEMO 6: Font Size Adjustments */
+        .responsive-text {
+            background-color: #ecf0f1;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .responsive-text h2 {
+            font-size: 20px;
+        }
+
+        .responsive-text p {
+            font-size: 14px;
+        }
+
+        @media (min-width: 768px) {
+            .responsive-text h2 {
+                font-size: 28px;
+            }
+            .responsive-text p {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .responsive-text h2 {
+                font-size: 36px;
+            }
+            .responsive-text p {
+                font-size: 18px;
+            }
+        }
+
+        /* MEDIA QUERY DEMO 7: Print Styles */
+        @media print {
+            body {
+                font-size: 12pt;
+                color: black;
+                background: white;
+            }
+            .no-print {
+                display: none;
+            }
+            .flex-section,
+            .position-container,
+            .zindex-container {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* MEDIA QUERY DEMO 8: Hover Capability */
+        .hover-demo {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        @media (hover: hover) {
+            .hover-demo:hover {
+                background-color: #2ecc71;
+                cursor: pointer;
+            }
+            .hover-demo::after {
+                content: " (Hover capable device)";
+            }
+        }
+
+        @media (hover: none) {
+            .hover-demo::after {
+                content: " (Touch device)";
+            }
+        }
+
+        /* MEDIA QUERY DEMO 9: Prefers Color Scheme */
+        .color-scheme-demo {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px solid #95a5a6;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .color-scheme-demo {
+                background-color: #2c3e50;
+                color: white;
+                border-color: #34495e;
+            }
+        }
+
+        /* MEDIA QUERY DEMO 10: Prefers Reduced Motion */
+        .animation-demo {
+            background-color: #9b59b6;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+            animation: slide 2s infinite;
+        }
+
+        @keyframes slide {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(50px); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animation-demo {
+                animation: none;
+            }
+            .animation-demo::after {
+                content: " (Animation disabled for accessibility)";
+            }
+        }
+
+        /* MEDIA QUERY DEMO 11: Resolution (High DPI) */
+        .resolution-demo {
+            background-color: #1abc9c;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .resolution-demo::before {
+            content: "Standard Resolution Display";
+        }
+
+        @media (min-resolution: 2dppx) {
+            .resolution-demo {
+                background-color: #16a085;
+            }
+            .resolution-demo::before {
+                content: "High Resolution Display (Retina)";
+            }
+        }
+
+        /* MEDIA QUERY DEMO 12: Combined Conditions */
+        .combined-media {
+            background-color: #95a5a6;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            .combined-media {
+                background-color: #27ae60;
+            }
+            .combined-media::before {
+                content: "Tablet in Landscape Mode";
+            }
+        }
+
+        /* MEDIA QUERY DEMO 13: Container-based Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        /* ==================== UTILITY STYLES ==================== */
+
+        .code-label {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            margin: 5px 0;
+        }
+
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin: 10px 0;
+            color: #856404;
+        }
+
+        .scroll-spacer {
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #ecf0f1);
+        }
+
+        /* Main heading */
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 30px 0;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Responsive adjustments for main content */
+        @media (max-width: 767px) {
+            .flex-section,
+            .position-container,
+            .zindex-container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 Complete CSS Guide: Flexbox, Grid, Position, Z-index & Media Queries</h1>
+
+    <!-- ==================== FLEXBOX SECTION ==================== -->
+    <div class="flex-section">
+        <h2 class="section-title">1️⃣ CSS FLEXBOX</h2>
+
+        <!-- Flex Direction -->
+        <div class="demo-title">📐 Flex Direction</div>
+        <div class="code-label">flex-direction: row;</div>
+        <div class="flex-container-row">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <div class="code-label">flex-direction: row-reverse;</div>
+        <div class="flex-container-row-reverse">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <div class="code-label">flex-direction: column;</div>
+        <div class="flex-container-column">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <div class="code-label">flex-direction: column-reverse;</div>
+        <div class="flex-container-column-reverse">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+
+        <!-- Flex Wrap -->
+        <div class="demo-title">📦 Flex Wrap</div>
+        <div class="code-label">flex-wrap: nowrap; (items shrink to fit)</div>
+        <div class="flex-nowrap">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+            <div class="flex-item-small flex-item">4</div>
+            <div class="flex-item-small flex-item">5</div>
+            <div class="flex-item-small flex-item">6</div>
+            <div class="flex-item-small flex-item">7</div>
+            <div class="flex-item-small flex-item">8</div>
+        </div>
+
+        <div class="code-label">flex-wrap: wrap;</div>
+        <div class="flex-wrap">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+            <div class="flex-item-small flex-item">4</div>
+            <div class="flex-item-small flex-item">5</div>
+            <div class="flex-item-small flex-item">6</div>
+            <div class="flex-item-small flex-item">7</div>
+            <div class="flex-item-small flex-item">8</div>
+        </div>
+
+        <div class="code-label">flex-wrap: wrap-reverse;</div>
+        <div class="flex-wrap-reverse">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+            <div class="flex-item-small flex-item">4</div>
+            <div class="flex-item-small flex-item">5</div>
+            <div class="flex-item-small flex-item">6</div>
+        </div>
+
+        <!-- Justify Content -->
+        <div class="demo-title">↔️ Justify Content (Main Axis Alignment)</div>
+        <div class="code-label">justify-content: flex-start;</div>
+        <div class="flex-justify-start">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+        </div>
+
+        <div class="code-label">justify-content: flex-end;</div>
+        <div class="flex-justify-end">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+        </div>
+
+        <div class="code-label">justify-content: center;</div>
+        <div class="flex-justify-center">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+        </div>
+
+        <div class="code-label">justify-content: space-between;</div>
+        <div class="flex-justify-between">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+        </div>
+
+        <div class="code-label">justify-content: space-around;</div>
+        <div class="flex-justify-around">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+        </div>
+
+        <div class="code-label">justify-content: space-evenly;</div>
+        <div class="flex-justify-evenly">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+        </div>
+
+        <!-- Align Items -->
+        <div class="demo-title">↕️ Align Items (Cross Axis Alignment)</div>
+        <div class="code-label">align-items: flex-start;</div>
+        <div class="flex-align-start">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+        </div>
+
+        <div class="code-label">align-items: flex-end;</div>
+        <div class="flex-align-end">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+        </div>
+
+        <div class="code-label">align-items: center;</div>
+        <div class="flex-align-center">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+        </div>
+
+        <div class="code-label">align-items: stretch; (default)</div>
+        <div class="flex-align-stretch">
+            <div class="flex-item-small flex-item">Stretches</div>
+            <div class="flex-item-small flex-item">To Fill</div>
+            <div class="flex-item-small flex-item">Container</div>
+        </div>
+
+        <div class="code-label">align-items: baseline;</div>
+        <div class="flex-align-baseline">
+            <div class="flex-item-small flex-item flex-item-varied">Large</div>
+            <div class="flex-item-small flex-item flex-item-varied">Small</div>
+            <div class="flex-item-small flex-item flex-item-varied">Medium</div>
+        </div>
+
+        <!-- Align Content -->
+        <div class="demo-title">📚 Align Content (Multi-line Alignment)</div>
+        <div class="code-label">align-content: flex-start;</div>
+        <div class="flex-content-start">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+            <div class="flex-item-small flex-item">4</div>
+            <div class="flex-item-small flex-item">5</div>
+            <div class="flex-item-small flex-item">6</div>
+        </div>
+
+        <div class="code-label">align-content: center;</div>
+        <div class="flex-content-center">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+            <div class="flex-item-small flex-item">4</div>
+            <div class="flex-item-small flex-item">5</div>
+            <div class="flex-item-small flex-item">6</div>
+        </div>
+
+        <div class="code-label">align-content: space-between;</div>
+        <div class="flex-content-between">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+            <div class="flex-item-small flex-item">4</div>
+            <div class="flex-item-small flex-item">5</div>
+            <div class="flex-item-small flex-item">6</div>
+        </div>
+
+        <!-- Gap -->
+        <div class="demo-title">📏 Gap (Space Between Items)</div>
+        <div class="code-label">gap: 20px;</div>
+        <div class="flex-gap">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+            <div class="flex-item-small flex-item">4</div>
+        </div>
+
+        <div class="code-label">row-gap: 15px; column-gap: 30px;</div>
+        <div class="flex-row-column-gap">
+            <div class="flex-item-small flex-item">1</div>
+            <div class="flex-item-small flex-item">2</div>
+            <div class="flex-item-small flex-item">3</div>
+            <div class="flex-item-small flex-item">4</div>
+            <div class="flex-item-small flex-item">5</div>
+            <div class="flex-item-small flex-item">6</div>
+        </div>
+
+        <!-- Flex Items Properties -->
+        <div class="demo-title">🎯 Flex Item Properties</div>
+        <div class="code-label">order: changes visual order</div>
+        <div class="flex-items-demo">
+            <div class="flex-item flex-item-order-3">Order: 3 (HTML: 1st)</div>
+            <div class="flex-item flex-item-order-1">Order: 1 (HTML: 2nd)</div>
+            <div class="flex-item flex-item-order-2">Order: 2 (HTML: 3rd)</div>
+        </div>
+
+        <div class="code-label">flex-grow: ability to grow</div>
+        <div class="flex-items-demo">
+            <div class="flex-item">No grow</div>
+            <div class="flex-item flex-item-grow">flex-grow: 1</div>
+            <div class="flex-item flex-item-grow-2">flex-grow: 2</div>
+        </div>
+
+        <div class="code-label">flex-shrink: ability to shrink (resize window to see)</div>
+        <div class="flex-items-demo">
+            <div class="flex-item flex-item-shrink-0">flex-shrink: 0 (won't shrink)</div>
+            <div class="flex-item">Can shrink</div>
+            <div class="flex-item">Can shrink</div>
+        </div>
+
+        <div class="code-label">flex-basis: initial size</div>
+        <div class="flex-items-demo">
+            <div class="flex-item flex-item-basis">flex-basis: 200px</div>
+            <div class="flex-item">Auto</div>
+            <div class="flex-item">Auto</div>
+        </div>
+
+        <div class="code-label">flex: shorthand (grow shrink basis)</div>
+        <div class="flex-items-demo">
+            <div class="flex-item flex-item-shorthand">flex: 1</div>
+            <div class="flex-item flex-item-shorthand">flex: 1</div>
+            <div class="flex-item">No flex</div>
+        </div>
+
+        <div class="code-label">align-self: overrides align-items</div>
+        <div class="flex-items-demo" style="align-items: flex-start; height: 100px;">
+            <div class="flex-item">Start</div>
+            <div class="flex-item flex-item-align-self">align-self: flex-end</div>
+            <div class="flex-item">Start</div>
+        </div>
+    </div>
+
+    <!-- ==================== GRID SECTION ==================== -->
+    <div class="flex-section">
+        <h2 class="section-title">2️⃣ CSS GRID</h2>
+
+        <!-- Basic Grid -->
+        <div class="demo-title">📊 Grid Template Columns & Rows</div>
+        <div class="code-label">grid-template-columns: 200px 200px 200px;</div>
+        <div class="grid-basic">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+        </div>
+
+        <div class="code-label">grid-template-columns: 1fr 2fr 1fr; (fractional units)</div>
+        <div class="grid-fr">
+            <div class="grid-item">1fr</div>
+            <div class="grid-item">2fr</div>
+            <div class="grid-item">1fr</div>
+            <div class="grid-item">1fr</div>
+            <div class="grid-item">2fr</div>
+            <div class="grid-item">1fr</div>
+        </div>
+
+        <div class="code-label">grid-template-columns: repeat(4, 1fr);</div>
+        <div class="grid-repeat">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+            <div class="grid-item-small grid-item">4</div>
+            <div class="grid-item-small grid-item">5</div>
+            <div class="grid-item-small grid-item">6</div>
+            <div class="grid-item-small grid-item">7</div>
+            <div class="grid-item-small grid-item">8</div>
+        </div>
+
+        <div class="code-label">minmax(100px, 1fr) - responsive sizing</div>
+        <div class="grid-minmax">
+            <div class="grid-item">Min: 100px</div>
+            <div class="grid-item">Max: 1fr</div>
+            <div class="grid-item">Flexible</div>
+        </div>
+
+        <div class="code-label">repeat(auto-fit, minmax(150px, 1fr))</div>
+        <div class="note">Auto-fit: Fits columns to available space (try resizing)</div>
+        <div class="grid-auto-fit">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+            <div class="grid-item-small grid-item">4</div>
+            <div class="grid-item-small grid-item">5</div>
+        </div>
+
+        <div class="code-label">repeat(auto-fill, minmax(150px, 1fr))</div>
+        <div class="note">Auto-fill: Fills with empty tracks if space available</div>
+        <div class="grid-auto-fill">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+            <div class="grid-item-small grid-item">4</div>
+            <div class="grid-item-small grid-item">5</div>
+        </div>
+
+        <!-- Grid Template Areas -->
+        <div class="demo-title">🗺️ Grid Template Areas</div>
+        <div class="code-label">Named grid areas for semantic layouts</div>
+        <div class="grid-areas">
+            <div class="grid-item grid-header">Header (grid-area: header)</div>
+            <div class="grid-item grid-sidebar">Sidebar</div>
+            <div class="grid-item grid-main">Main Content</div>
+            <div class="grid-item grid-aside">Aside</div>
+            <div class="grid-item grid-footer">Footer</div>
+        </div>
+
+        <!-- Grid Gap -->
+        <div class="demo-title">📏 Grid Gap</div>
+        <div class="code-label">gap: 20px;</div>
+        <div class="grid-gap">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+            <div class="grid-item-small grid-item">4</div>
+            <div class="grid-item-small grid-item">5</div>
+            <div class="grid-item-small grid-item">6</div>
+        </div>
+
+        <div class="code-label">row-gap: 10px; column-gap: 30px;</div>
+        <div class="grid-row-column-gap">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+            <div class="grid-item-small grid-item">4</div>
+            <div class="grid-item-small grid-item">5</div>
+            <div class="grid-item-small grid-item">6</div>
+        </div>
+
+        <!-- Justify and Align Items -->
+        <div class="demo-title">↔️↕️ Justify & Align Items</div>
+        <div class="code-label">justify-items: start;</div>
+        <div class="grid-justify-items-start">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+        </div>
+
+        <div class="code-label">justify-items: center;</div>
+        <div class="grid-justify-items-center">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+        </div>
+
+        <div class="code-label">align-items: start;</div>
+        <div class="grid-align-items-start">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+        </div>
+
+        <div class="code-label">align-items: center;</div>
+        <div class="grid-align-items-center">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+        </div>
+
+        <div class="code-label">place-items: center; (shorthand)</div>
+        <div class="grid-place-items-center">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+        </div>
+
+        <!-- Justify and Align Content -->
+        <div class="demo-title">🎯 Justify & Align Content (Grid Alignment)</div>
+        <div class="code-label">justify-content: space-between;</div>
+        <div class="grid-justify-content">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+            <div class="grid-item-small grid-item">4</div>
+            <div class="grid-item-small grid-item">5</div>
+            <div class="grid-item-small grid-item">6</div>
+        </div>
+
+        <div class="code-label">align-content: center;</div>
+        <div class="grid-align-content">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+            <div class="grid-item-small grid-item">4</div>
+            <div class="grid-item-small grid-item">5</div>
+            <div class="grid-item-small grid-item">6</div>
+        </div>
+
+        <div class="code-label">place-content: center; (both centered)</div>
+        <div class="grid-place-content">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+            <div class="grid-item-small grid-item">4</div>
+            <div class="grid-item-small grid-item">5</div>
+            <div class="grid-item-small grid-item">6</div>
+        </div>
+
+        <!-- Grid Item Placement -->
+        <div class="demo-title">🎲 Grid Item Placement</div>
+        <div class="code-label">Spanning columns and rows</div>
+        <div class="grid-placement">
+            <div class="grid-item grid-span-column">grid-column: 1 / 3</div>
+            <div class="grid-item grid-span-row">grid-row: 1 / 3</div>
+            <div class="grid-item">Normal</div>
+            <div class="grid-item grid-span-both">Spans both</div>
+            <div class="grid-item">Normal</div>
+            <div class="grid-item grid-line-placement">grid-column: 1 / -1</div>
+            <div class="grid-item grid-span-keyword">span 2</div>
+            <div class="grid-item">Normal</div>
+        </div>
+
+        <!-- Grid Auto Flow -->
+        <div class="demo-title">🔄 Grid Auto Flow</div>
+        <div class="code-label">grid-auto-flow: row; (default)</div>
+        <div class="grid-auto-flow-row">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+            <div class="grid-item-small grid-item">4</div>
+            <div class="grid-item-small grid-item">5</div>
+        </div>
+
+        <div class="code-label">grid-auto-flow: column;</div>
+        <div class="grid-auto-flow-column">
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item">3</div>
+            <div class="grid-item-small grid-item">4</div>
+            <div class="grid-item-small grid-item">5</div>
+        </div>
+
+        <div class="code-label">grid-auto-flow: dense; (fills gaps)</div>
+        <div class="grid-auto-flow-dense">
+            <div class="grid-item-small grid-item" style="grid-column: span 2;">Wide</div>
+            <div class="grid-item-small grid-item">1</div>
+            <div class="grid-item-small grid-item">2</div>
+            <div class="grid-item-small grid-item" style="grid-column: span 2;">Wide</div>
+            <div class="grid-item-small grid-item">3</div>
+            <div class="grid-item-small grid-item">4</div>
+            <div class="grid-item-small grid-item">5</div>
+        </div>
+    </div>
+
+    <!-- ==================== POSITION SECTION ==================== -->
+    <div class="flex-section">
+        <h2 class="section-title">3️⃣ CSS POSITION</h2>
+
+        <div class="demo-title">📍 Static Position (Default)</div>
+        <div class="code-label">position: static;</div>
+        <div class="note">Static is the default. Elements flow in normal document order. Top/right/bottom/left have no effect.</div>
+        <div class="position-static">
+            Static positioned element (normal flow)
+        </div>
+
+        <div class="demo-title">🔄 Relative Position</div>
+        <div class="code-label">position: relative;</div>
+        <div class="note">Offset from its normal position. Original space is preserved.</div>
+        <div class="position-relative-no-offset">Relative (no offset)</div>
+        <div class="position-relative">Relative with top: 20px; left: 30px;</div>
+        <div class="position-static">Following element (notice the gap above)</div>
+
+        <div class="demo-title">🎯 Absolute Position</div>
+        <div class="code-label">position: absolute;</div>
+        <div class="note">Removed from normal flow. Positioned relative to nearest positioned ancestor.</div>
+        <div class="position-container">
+            <div class="position-static">Normal flow content</div>
+            <div class="position-absolute-top-right">Top Right</div>
+            <div class="position-absolute-bottom-left">Bottom Left</div>
+            <div class="position-absolute-center">Centered</div>
+            <div class="position-static">More normal content</div>
+        </div>
+
+        <div class="demo-title">📌 Fixed Position</div>
+        <div class="code-label">position: fixed;</div>
+        <div class="note">Fixed relative to viewport. Stays in place when scrolling. (See fixed button bottom-right)</div>
+        <div class="position-fixed-bottom-right no-print">↑ Top</div>
+
+        <div class="demo-title">📎 Sticky Position</div>
+        <div class="code-label">position: sticky;</div>
+        <div class="note">Hybrid: relative until scroll threshold, then fixed. Scroll the container below:</div>
+        <div class="sticky-container">
+            <div class="position-sticky">🔒 Sticky Header (scroll to see it stick!)</div>
+            <div class="sticky-content">
+                <p>Scroll down in this container...</p>
+                <p>The sticky header will stick to the top when you scroll!</p>
+                <p>Keep scrolling...</p>
+                <p>Notice how it stays at the top!</p>
+                <p>This is perfect for section headers, table headers, or navigation.</p>
+                <p>More content here...</p>
+                <p>And more...</p>
+                <p>Keep going...</p>
+                <p>Almost there...</p>
+                <p>You've reached the end!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== Z-INDEX SECTION ==================== -->
+    <div class="flex-section">
+        <h2 class="section-title">4️⃣ CSS Z-INDEX</h2>
+
+        <div class="demo-title">📚 Basic Z-index Stacking</div>
+        <div class="code-label">Higher z-index values appear on top</div>
+        <div class="zindex-container">
+            <div class="zindex-box-1">z-index: 1</div>
+            <div class="zindex-box-2">z-index: 2</div>
+            <div class="zindex-box-3">z-index: 3 (on top)</div>
+        </div>
+
+        <div class="demo-title">➖ Negative Z-index</div>
+        <div class="code-label">z-index: -1; (behind content)</div>
+        <div class="zindex-background">
+            <div class="zindex-negative">z-index: -1 (behind white box)</div>
+            <div class="zindex-content">
+                This white content box has z-index: 1, so it appears above the orange box with z-index: -1.
+                Negative z-index places elements behind non-positioned elements.
+            </div>
+        </div>
+
+        <div class="demo-title">🎭 Stacking Context</div>
+        <div class="code-label">Parent-child stacking relationships</div>
+        <div class="note">Children cannot escape their parent's stacking context. Even with z-index: 999, the red child stays within its parent's layer.</div>
+        <div class="stacking-context-parent">
+            <div class="stacking-context-1">
+                Parent: z-index 1 (Blue)
+                <div class="stacking-context-1-child">
+                    Child: z-index 999 (Red)<br>
+                    Can't escape parent!
+                </div>
+            </div>
+            <div class="stacking-context-2">
+                Parent: z-index 2 (Green)
+                <div class="stacking-context-2-child">
+                    Child: z-index 1 (Purple)<br>
+                    Appears above red despite lower z-index!
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-title">🪟 Modal Overlay Example</div>
+        <div class="code-label">High z-index for overlays</div>
+        <button onclick="document.querySelector('.modal-overlay').classList.add('active')" 
+                style="background-color: #3498db; color: white; padding: 15px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+            Open Modal (z-index: 1000)
+        </button>
+
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <h3>Modal Dialog</h3>
+                <p>This modal has z-index: 1001 to appear above the overlay (z-index: 1000).</p>
+                <button onclick="document.querySelector('.modal-overlay').classList.remove('active')" 
+                        style="background-color: #e74c3c; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MEDIA QUERIES SECTION ==================== -->
+    <div class="flex-section">
+        <h2 class="section-title">5️⃣ CSS MEDIA QUERIES</h2>
+
+        <div class="demo-title">📱 Width-based Breakpoints (Resize window!)</div>
+        <div class="code-label">@media (min-width: ...)</div>
+        <div class="responsive-demo">
+            <div class="responsive-box"></div>
+        </div>
+
+        <div class="demo-title">🔄 Orientation Detection</div>
+        <div class="code-label">@media (orientation: landscape/portrait)</div>
+        <div class="responsive-demo">
+            <div class="orientation-demo"></div>
+        </div>
+
+        <div class="demo-title">🎨 Responsive Grid Layout</div>
+        <div class="code-label">Columns change based on screen size</div>
+        <div class="responsive-grid">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+        </div>
+
+        <div class="demo-title">🧭 Responsive Navigation</div>
+        <div class="code-label">Stacked on mobile, horizontal on desktop</div>
+        <nav class="responsive-nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <div class="demo-title">👁️ Show/Hide Based on Screen Size</div>
+        <div class="code-label">Different content for different devices</div>
+        <div class="mobile-only">📱 Mobile View - You're on a small screen!</div>
+        <div class="desktop-only">💻 Desktop View - You're on a large screen!</div>
+
+        <div class="demo-title">🔤 Responsive Typography</div>
+        <div class="code-label">Font sizes scale with screen size</div>
+        <div class="responsive-text">
+            <h2>Responsive Heading</h2>
+            <p>This text changes size based on screen width. Try resizing your browser window to see the effect.</p>
+        </div>
+
+        <div class="demo-title">🖱️ Hover Capability Detection</div>
+        <div class="code-label">@media (hover: hover/none)</div>
+        <div class="hover-demo">Hover over me!</div>
+
+        <div class="demo-title">🌓 Dark Mode Support</div>
+        <div class="code-label">@media (prefers-color-scheme: dark)</div>
+        <div class="note">Enable dark mode in your OS settings to see this change!</div>
+        <div class="color-scheme-demo">
+            This box adapts to your system's color scheme preference. It will be dark if you have dark mode enabled.
+        </div>
+
+        <div class="demo-title">♿ Reduced Motion Support</div>
+        <div class="code-label">@media (prefers-reduced-motion: reduce)</div>
+        <div class="note">Enable "Reduce Motion" in your accessibility settings to disable the animation!</div>
+        <div class="animation-demo">
+            Animated box (animation disabled if user prefers reduced motion)
+        </div>
+
+        <div class="demo-title">🖥️ High Resolution Displays</div>
+        <div class="code-label">@media (min-resolution: 2dppx)</div>
+        <div class="resolution-demo"></div>
+
+        <div class="demo-title">🎯 Combined Media Queries</div>
+        <div class="code-label">Multiple conditions with 'and'</div>
+        <div class="note">This works best on tablets in landscape mode (768px - 1024px width)</div>
+        <div class="combined-media">
+            Turn your tablet to landscape to see this change!
+        </div>
+
+        <div class="demo-title">📦 Responsive Container</div>
+        <div class="code-label">Container adapts to viewport width</div>
+        <div class="container" style="background-color: #3498db; color: white; padding: 20px; text-align: center;">
+            This container has max-width that changes at each breakpoint
+        </div>
+    </div>
+
+    <!-- Print Styles Indicator -->
+    <div class="flex-section no-print">
+        <h2 class="section-title">🖨️ BONUS: Print Styles</h2>
+        <div class="note">
+            Try printing this page (Ctrl/Cmd + P) to see print-specific styles in action!
+            Print styles optimize the page for paper: simplified colors, hidden interactive elements, and page-break controls.
+        </div>
+    </div>
+
+    <div class="scroll-spacer"></div>
+
+    <script>
+        // Scroll to top functionality for fixed button
+        document.querySelector('.position-fixed-bottom-right').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

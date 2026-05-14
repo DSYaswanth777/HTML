@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced CSS</title>
+
+    <style>
+      .box {
+        background-color: yellow;
+        height: 100px;
+        width: 100px;
+        border: 2px solid red;
+      }
+
+      .flex-container {
+        display: flex;
+        /* gap: 20px; */
+        justify-content: space-between;
+      }
+
+      .grid-container {
+        display: grid;
+        /* grid-template-columns: auto auto auto; */
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+
+        justify-content: center;
+        align-items: center;
+      }
+      .position-absolute {
+        background-color: black;
+        height: 100px;
+        /* position: absolute; */
+        width: 100px;
+        border: 2px solid red;
+      }
+      .position-relative {
+        background-color: black;
+        height: 50px;
+        width: 50px;
+        /* position: relative; */
+top: 20px;
+left: 30px;
+        border: 2px solid red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Flex Box</h1>
+
+    <div class="flex-container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <hr />
+
+    <div class="grid-container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <p>
+      Grid is a two dimensional layout system for creating complex layouts with
+      rows and columns
+    </p>
+
+    <h1>CSS poition</h1>
+
+    <p>
+      The position property specifies the type of positioning method used for an
+      element
+    </p>
+
+    <p>postion values static top right bottom left sticky relative Fixed</p>
+
+    <div class="position-absolute">
+
+        <div class="position-relative">
+
+        </div>
+
+    </div>
+  </body>
+</html>
