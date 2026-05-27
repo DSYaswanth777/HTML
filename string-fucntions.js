@@ -25,7 +25,7 @@ console.log("Trimmed:", text.trim());
 
 
 /*******************************************************
-3. toUpperCase() / toLowerCase()
+3. toUpperCase() / toLowerCase(/Users/dasarisrinivasayaswanth/Documents/HTML CSS /JS-Classes/switch-statements.js)
    Useful for case-insensitive comparisons
 ********************************************************/
 console.log("Uppercase:", text.toUpperCase());
