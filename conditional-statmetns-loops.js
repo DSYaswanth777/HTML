@@ -2,7 +2,7 @@
 
 // alert("2"+"2")
 // alert(2+2)
-// alert("Rama" + " " + "Krishna")
+// alert("Rama" + "Krishna")
 // implicit conversion
 // alert("2"-"1")
 
@@ -14,18 +14,17 @@
 
 //Anything give in prompt is treated as string
 // let age = prompt("Enter your age");
-// console.log(age)
-// console.log(age)
+
 //So we are using explicit conversion
 // age = Number(age)
 // alert(age+5)
 
 // Basic Operators
 
-// let a = 6;
-// let b = 8;
+// let a = 5;
+// let b = 6;
 
-// console.log(a+b) //add   
+// console.log(a+b) //add
 // console.log(a-b) //subtract
 // console.log(a*b)  //multiply
 // console.log(a/b) //divide
@@ -43,14 +42,12 @@
 
 // console.log(5>3)
 // console.log(5<3)
-
-
 // console.log(5 === 5);
 
 // console.log(5 === "5"); 
 // console.log(5 == "5");
 
-// === compares both data type and value is called as strict equaility
+// === compares both data type and value is called as  strict equaility
 // == compares only value  this is called as equals to
 
 // Logical Operators
@@ -71,7 +68,7 @@
 
 // Nullish Coalescing Operator ( ??)
 
-// let name =" ";
+// let name = "";
 // alert(name ?? "Guest")
 
 // ?? checks only null or undefined
@@ -155,41 +152,3 @@
 
 // Countdown Using while
 // Print Numbers from 10 to 1
-
-
-//function declaration
-function greet (){
-    return console.log("hello")
-}
-greet()
-//function expression
-const add = function(a,b){
-    return console.log(a+b)
-}
-add(2,3)
-
-// arrow function 
-const multiply = (x,y) => x*y
-
-
-//Anonnymous function
-
-const square = function(num){
-    return num*num
-}
-
-
-// named function
-
-const divide = function divide(x,y){
-    return x/y
-}
-
-
-// self - invoked function or Immediately invoked fucntion expression
-
-// (
-//     function(){
-//         console.log("THis is IIFE")
-//     }
-// )()/Users/dasarisrinivasayaswanth/Documents/HTML CSS /JS-Classes/functions.js /Users/dasarisrinivasayaswanth/Documents/HTML CSS /JS-Classes/conditional-statmetns-loops.js /Users/dasarisrinivasayaswanth/Documents/HTML CSS /JS-Classes/string-fucntions.js
