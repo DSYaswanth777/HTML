@@ -1,15 +1,15 @@
-let student = {
-  name: "Mahesh",
-  age: 30,
-  city: "Hyd",
-};
+// let student = {
+//   name: "Mahesh",
+//   age: 30,
+//   city: "Hyd",
+// };
 // let name = "Aliya";
 // console.log(name);
 
-// console.log(student.name);
+// console.log(student,"student before making any edit");
 // console.log(student.age);
 // console.log(student.city);
-// // console.log(student["age"])
+//  console.log(student["age"])
 
 // student.age = 25;
 
@@ -17,7 +17,7 @@ let student = {
 
 // student.email = "mahesh@gmail.com";
 // console.log(student.email);
-// console.log(student);
+// console.log(student,"student after making the edit");
 
 // delete student.email;
 
@@ -31,13 +31,13 @@ let student = {
 // };
 // user.sayHello();
 
-// let user2 = {
-//   name: "Aliya",
-//   sayHello() {
-//     console.log("Hello " + this.name);
-//   },
-// };
-// user2.sayHello();
+let user2 = {
+  name: "Aliya",
+  sayHello() {
+    console.log("Hello " + this.name);
+  },
+};
+user2.sayHello();
 
 // let person = { name: "John" };
 // let admin = person;
@@ -52,32 +52,32 @@ let student = {
 // console.log(values);
 // console.log(entries);
 
-let man = {
-  name: "Murari",
-  age: 25,
-  phone: 9876543210,
-  height: 170,
-  city: "Hyd",
-  pincode: 123456,
-  country: "India",
-  address: {
-    city: "Hyd",
-    pincode: 123456,
-    country: "India",
-  },
-};
+// let man = {
+//   name: "Murari",
+//   age: 25,
+//   phone: 9876543210,
+//   height: 170,
+//   city: "Hyd",
+//   pincode: 123456,
+//   country: "India",
+//   address: {
+//     city: "Hyd",
+//     pincode: 123456,
+//     country: "India",
+//   },
+// };
 
 // console.log(man.address.city);
 // console.log(man.address.pincode);
 
-// //optional Chaining
-// console.log(man?.phone);
+// // //optional Chaining
+// // console.log(man?.phone);
 
-// Looping through objects
+// // Looping through objects
 
-for (let key in man){
-    console.log(key, man[key])
-}
+// for (let key in man){
+//     console.log(key, man[key])
+// }
 
 
 // Task
