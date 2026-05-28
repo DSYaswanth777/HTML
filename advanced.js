@@ -80,24 +80,24 @@ function fetchData(){
     })
 }
 
-async function getData(){
-    console.log("Fetching ...")
-    let result = await fetchData()
-    console.log(result)
-}
-getData()
+// async function getData(){
+//     console.log("Fetching ...")
+//     let result = await fetchData()
+//     console.log(result)
+// }
+// getData()
 
 
-async function loadData()
-{
-    try {
-        let result = await fetchData()
-        console.log(result)
-    } catch(error){
-        console.log("Error", error)
-    }
-}
-loadData()
+// async function loadData()
+// {
+//     try {
+//         let result = await fetchData()
+//         console.log(result)
+//     } catch(error){
+//         console.log("Error", error)
+//     }
+// }
+// loadData()
 
 
 

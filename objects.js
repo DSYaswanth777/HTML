@@ -31,13 +31,13 @@
 // };
 // user.sayHello();
 
-let user2 = {
-  name: "Aliya",
-  sayHello() {
-    console.log("Hello " + this.name);
-  },
-};
-user2.sayHello();
+// let user2 = {
+//   name: "Aliya",
+//   sayHello() {
+//     console.log("Hello " + this.name);
+//   },
+// };
+// user2.sayHello();
 
 // let person = { name: "John" };
 // let admin = person;

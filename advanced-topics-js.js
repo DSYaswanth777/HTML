@@ -8,25 +8,25 @@
 // console.log(user2)
 
 
-// let data = {
-//     name:"Murari",
-//     age:23
-// }
+let data = {
+    name:"Murari",
+    age:23
+}
 
-// localStorage.setItem("user", JSON.stringify(data))
-
-
-// let dataToPrint = localStorage.getItem("user")
+localStorage.setItem("user", JSON.stringify(data))
 
 
-// console.log(dataToPrint.age)
+let dataToPrint = localStorage.getItem("user")
+
+
+console.log(dataToPrint.age)
 
 
 // {}  -->Object
 // "{}" --> stores like this in localStorage
 
-// let storedData = JSON.parse(localStorage.getItem("user"))
-// console.log(storedData.age)
+let storedData = JSON.parse(localStorage.getItem("user"))
+console.log(storedData.age)
 
 // localStorage.removeItem("user")
 
@@ -44,13 +44,13 @@
 // // var -> global scope
 // // const -> block scope
 
-// let appName = "Task Manager"
+let appName = "Task Manager"
 
 
-// function showApp(){
-//     console.log(appName)
-// }
-// showApp()
+function showApp(){
+    console.log(appName)
+}
+showApp()
 
 // // Works because global variables are visible everywhere
 
@@ -59,14 +59,15 @@
 // // Avoid globals unless Neccessary
 
 // // Function scope
+var message = "Hello"
 
-// function test(){
-//     var message = "Hello"
-//     console.log(message)
-// }
+function test(){
+    var message = "Hello"
+    console.log(message)
+}
 
-// // test()
-// console.log(message)
+test()
+console.log(message)
 
 // // Block Scope
 
