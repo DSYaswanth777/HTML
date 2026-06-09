@@ -107,6 +107,9 @@
     <circle cx="50" cy="50" r="40" fill="red" />
 </svg>
 
+<p id="greeting">Hello</p>
+<button onclick="update()">Click me</button>
+
 
 FORM INPUTS:
 <input type="text">       - Text input
@@ -149,5 +152,13 @@ INTERACTIVE:
 <summary>  - Clickable heading
 <progress> - Progress bar
 <meter>    - Gauge/measurement
+
+
+
+  <script>
+    function update() {
+      document.getElementById('greeting').innerText = 'Hello, Alice!';
+    }
+  </script>
   </body>
 </html>
